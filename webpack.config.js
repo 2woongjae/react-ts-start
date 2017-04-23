@@ -12,8 +12,23 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+            {
+                test: /\.css$/,
+                loaders: ["style-loader", "css-loader?minimize"]
+            },
+            {
+                test: /\.(jpg|png|woff|woff2|eot|ttf|svg|gif)$/,
+                loader: "file-loader?name=[name]_[hash].[ext]"
+            },
+            {
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            },
+            {
+                enforce: "pre",
+                test: /\.js$/,
+                loader: 'source-map-loader'
+            }
         ]
     },
     plugins: [
