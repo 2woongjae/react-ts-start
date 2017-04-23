@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface AppProps {
+export interface AppProps {
     name: string;
 }
 

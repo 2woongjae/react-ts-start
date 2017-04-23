@@ -1,9 +1,13 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-import {App} from './components/App';
+import {App, AppProps} from './components/App';
+
+const props: AppProps = {
+    name: 'TypeScript'
+};
 
 ReactDom.render(
-    <App name="TypeScript" />,
+    <App {...props} />,
     document.querySelector('#app')
 );
